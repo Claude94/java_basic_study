@@ -13,8 +13,8 @@ public class Wattior extends Player {
     }
 
     @Override //오버라이딩 룰을 위반했는지 확인
-    void info() {
-        super.info();
+    public void info() {
+        super.info(); //부모의 info를 호출하는 것으로 player의 메세드를 불러 온다
         System.out.println("# 분노 : " + rage);
     }
 
