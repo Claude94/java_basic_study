@@ -1,0 +1,16 @@
+package day10.protec.pac2;
+
+import day10.protec.pac1.A;
+
+public class D extends A {
+    protected D(String b) {
+//        super(10);
+        super("안녕");
+
+//        this.f1 = 10; //default
+        this.f2 = 11; //protected
+
+//        m1(); //default
+        m2(); //protected
+    }
+}
