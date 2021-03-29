@@ -16,7 +16,18 @@ public class Mage extends Player{
         System.out.println("# 마력 : " + mana);
     }
 
-    void meteo() {
+    public void meteo(Player ...players ) {
+        if (players.length > 0) {
+            System.out.printf("%s님 메테오 시전", this.getNickName());
+            for (Player player : players) {
+                if (player == this) {
+                    continue;
+                }
+                int damage = (int) (Math.random() * 6) + 10;
+                player.hp -= damage; //체력 차감
+                System.out.printf("%s님이 %d의 피해를 입었습니다 (남은 체력: %d)\n",player.getNickName(), damage, player.hp);
 
+            }
+        }
     }
 }

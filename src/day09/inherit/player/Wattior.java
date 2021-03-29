@@ -18,7 +18,20 @@ public class Wattior extends Player {
         System.out.println("# 분노 : " + rage);
     }
 
-    void fireSlash() {
-
+    public void fireSlash(Player player) {
+        System.out.printf("%s님이 %s님에게 fireSlash를 시전 했습니다\n",this.getNickName(), player.getNickName());
+        if (player instanceof Mage) {
+            player.hp -= 10;
+            System.out.printf("%s님이 10의 피해를 입었습니다\n", this.getNickName());
+            System.out.printf("현재 체력 : %s\n",player.hp);
+        } else if (player instanceof Wattior){
+            player.hp -= 20;
+            System.out.printf("%s님이 20의 피해를 입었습니다\n", this.getNickName());
+            System.out.printf("현재 체력 : %s\n",player.hp);
+        } else if (player instanceof Hunter) {
+            player.hp -= 15;
+            System.out.printf("%s님이 15의 피해를 입었습니다\n", this.getNickName());
+            System.out.printf("현재 체력 : %s\n",player.hp);
+        }
     }
 }
