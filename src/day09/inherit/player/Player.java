@@ -11,6 +11,7 @@ public class Player extends Object{
     //생성자
     public Player(String nickName) {
         System.out.println("플레이어 생성자 호출");
+        this.nickName = nickName;
         this.level = 1;
         this.hp = level * 50;
     }
@@ -27,6 +28,7 @@ public class Player extends Object{
     }
 
     public String getNickName() {
+
         return nickName;
     }
 }

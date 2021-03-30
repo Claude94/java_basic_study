@@ -1,13 +1,25 @@
 package day06;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Roulette {
+        private static Scanner sc = new Scanner(System.in);
+
+    public static int safeNextInt(String question) {
+        while (true) {
+            try {
+                System.out.print(question);
+                return sc.nextInt();
+            } catch (InputMismatchException e) {
+                sc.nextLine();
+                System.out.println("정수로만 입력하세요 ");
+            }
+        }
+    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("게임 인원 (2 ~ 4명) ==> ");
-        int gameMember = sc.nextInt();
+        int gameMember = safeNextInt("게임 인원 (2 ~ 4명) ==> ");
         if (gameMember > 4) {
             return;
         } else if (gameMember < 2) {
@@ -21,8 +33,7 @@ public class Roulette {
             player[n] = sc.next();
         }
         System.out.println(Arrays.toString(player));
-        System.out.print("실탄 개수 (6개 미만) ==> ");
-        int bulletNum = sc.nextInt();
+        int bulletNum = safeNextInt("실탄 개수 (6개 미만) ==> ");
         sc.nextLine(); //위에서 발생한 nextLine의 \n을 처리하는 구문
         if (bulletNum > 6) {
             return;
