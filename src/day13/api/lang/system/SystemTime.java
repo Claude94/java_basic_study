@@ -14,6 +14,8 @@ public class SystemTime {
         }
         long end = System.currentTimeMillis();
         System.out.println("실행시간: " + (end - start) + "ms");
+
+        System.exit(0);
     }
 
 }
